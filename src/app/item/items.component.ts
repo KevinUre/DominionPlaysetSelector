@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 
 import { ItemService } from "./item.service";
 import { DominionCard, AllCards } from "../models/card";
+import { RadSideDrawer } from "nativescript-ui-sidedrawer";
+import * as app from "tns-core-modules/application";
 
 @Component({
     selector: "ns-items",
@@ -14,5 +16,10 @@ export class ItemsComponent implements OnInit {
 
     ngOnInit(): void {
         this.cards = AllCards;
+    }
+
+    onDrawerButtonTap(): void {
+        const sideDrawer = <RadSideDrawer>app.getRootView();
+        sideDrawer.showDrawer();
     }
 }
