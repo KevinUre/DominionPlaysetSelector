@@ -15,7 +15,6 @@ export class CardListDebugComponent implements OnInit {
     cards: DominionCard[];
 
     constructor(
-        private router: Router,
         private routerExtensions: RouterExtensions) { }
 
     ngOnInit(): void {
