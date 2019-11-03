@@ -3,14 +3,13 @@
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>
-    <Label text="Home"></Label>
+    <Label text="All Cards"></Label>
 </ActionBar>
 
 <GridLayout class="page">
-    <ListView [items]="cards" class="list-group">
+    <ListView [items]="cards" class="list-group" (itemTap)="itemTapped($event)">
         <ng-template let-card="item">
-            <Label [nsRouterLink]="['/cardViewDebug', card.Name]" [text]="card.DisplayName"
-                class="list-group-item"></Label>
+            <Label [text]="card.DisplayName" class="list-group-item"></Label>
         </ng-template>
     </ListView>
 </GridLayout>

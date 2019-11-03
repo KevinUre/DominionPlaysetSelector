@@ -1,8 +1,11 @@
 import { Component, OnInit } from "@angular/core";
+import { ListView, ItemEventData } from "tns-core-modules/ui/list-view";
 
 import { DominionCard, AllCards } from "../../models/card";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
+import { Router, NavigationEnd } from "@angular/router";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
     selector: "ns-card-list-debug",
@@ -11,7 +14,9 @@ import * as app from "tns-core-modules/application";
 export class CardListDebugComponent implements OnInit {
     cards: DominionCard[];
 
-    constructor() { }
+    constructor(
+        private router: Router,
+        private routerExtensions: RouterExtensions) { }
 
     ngOnInit(): void {
         this.cards = AllCards;
@@ -20,5 +25,9 @@ export class CardListDebugComponent implements OnInit {
     onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
+    }
+
+    itemTapped(args: ItemEventData): void {
+        this.routerExtensions.navigate(['/cardViewDebug', this.cards[args.index].Name]);
     }
 }
