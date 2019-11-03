@@ -4,4 +4,6 @@
     <Label class="h4" *ngFor="let type of card.DisplayTypes" [text]="type"></Label>
     <Label class="h4" [text]="'$'+card.Cost"></Label>
     <Label class="h4"[text]="card.DisplaySet"></Label>
+    <Label class="h4"[text]="card.ActionEconomy"></Label>
+    <Label class="h4" *ngFor="let effect of card.Effects" [text]="effect"></Label>
 </FlexboxLayout>
