@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { CardListDebugComponent } from "./pages/card-list-debug/card-list-debug.component";
 import { CardDetailsDebugComponent } from "./pages/card-details-debug/card-details-debug.component";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
+import { GeneratorComponent } from './pages/generator/generator.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -25,7 +26,8 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
     declarations: [
         AppComponent,
         CardListDebugComponent,
-        CardDetailsDebugComponent
+        CardDetailsDebugComponent,
+        GeneratorComponent
     ],
     providers: [],
     schemas: [

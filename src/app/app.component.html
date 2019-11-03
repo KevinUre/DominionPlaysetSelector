@@ -14,6 +14,11 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
         <ScrollView row="1" class="nt-drawer__body">
             <StackLayout>
 
+                <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/generator')" (tap)="onNavItemTap('/generator')">
+                    <Label col="0" text="&#xf522;" class="nt-icon fas"></Label>
+                    <Label col="1" text="View All Cards" class="p-r-10"></Label>
+                </GridLayout>
+
                 <StackLayout class="hr"></StackLayout>
 
                 <GridLayout columns="auto, *" class="nt-drawer__list-item" [class.-selected]="isComponentSelected('/cardListDebug')" (tap)="onNavItemTap('/cardListDebug')">

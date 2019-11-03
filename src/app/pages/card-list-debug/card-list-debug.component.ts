@@ -4,7 +4,7 @@ import { ListView, ItemEventData } from "tns-core-modules/ui/list-view";
 import { DominionCard, AllCards } from "../../models/card";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
-import { Router, NavigationEnd } from "@angular/router";
+import { Router } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular/router";
 
 @Component({
