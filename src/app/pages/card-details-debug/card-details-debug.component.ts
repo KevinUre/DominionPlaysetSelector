@@ -1,13 +1,13 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 
-import { DominionCard, AllCards } from "../models/card";
+import { DominionCard, AllCards } from "../../models/card";
 
 @Component({
     selector: "ns-details",
-    templateUrl: "./item-detail.component.html"
+    templateUrl: "./card-details-debug.component.html"
 })
-export class ItemDetailComponent implements OnInit {
+export class CardDetailsDebugComponent implements OnInit {
     card: DominionCard;
 
     constructor(

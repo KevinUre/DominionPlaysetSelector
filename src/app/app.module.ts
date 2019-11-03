@@ -3,8 +3,8 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ItemsComponent } from "./item/items.component";
-import { ItemDetailComponent } from "./item/item-detail.component";
+import { CardListDebugComponent } from "./pages/card-list-debug/card-list-debug.component";
+import { CardDetailsDebugComponent } from "./pages/card-details-debug/card-details-debug.component";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -24,8 +24,8 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
     ],
     declarations: [
         AppComponent,
-        ItemsComponent,
-        ItemDetailComponent
+        CardListDebugComponent,
+        CardDetailsDebugComponent
     ],
     providers: [],
     schemas: [

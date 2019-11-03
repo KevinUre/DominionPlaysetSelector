@@ -1,0 +1,16 @@
+<ActionBar>
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label text="Home"></Label>
+</ActionBar>
+
+<GridLayout class="page">
+    <ListView [items]="cards" class="list-group">
+        <ng-template let-card="item">
+            <Label [nsRouterLink]="['/cardViewDebug', card.Name]" [text]="card.DisplayName"
+                class="list-group-item"></Label>
+        </ng-template>
+    </ListView>
+</GridLayout>
