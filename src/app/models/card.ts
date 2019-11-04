@@ -1,5 +1,5 @@
 import { ExpansionSet, CardType, ActionEconomy, Draws, MiscAbilities } from "../constants/card-attributes";
-
+import { Relationship } from './relationship'
 export class DominionCard {
     public constructor (
         public Name: string,
@@ -7,7 +7,9 @@ export class DominionCard {
         public Cost: number,
         public CardTypes: CardType[],
         public ActionEconomy: ActionEconomy,
-        public Effects: string[]
+        public Effects: string[],
+        public Relationships: Relationship[] = [],
+        public BaseInterestWeight: number = 1
     ) {}
 
     public get DisplayName(): string {
@@ -49,7 +51,8 @@ export const AllCards: DominionCard[] = [
         2,
         [CardType.Action],
         ActionEconomy.Sustaining,
-        [Draws.ReplaceSeveral]
+        [Draws.ReplaceSeveral],
+        [ new Relationship([MiscAbilities.WhenDiscardedAbility]) ]
     ),
     new DominionCard(
         "Name:Chapel",
@@ -57,7 +60,9 @@ export const AllCards: DominionCard[] = [
         2,
         [CardType.Action],
         ActionEconomy.Terminating,
-        [MiscAbilities.Trash]
+        [MiscAbilities.Trash],
+        [],
+        -1
     ),
     new DominionCard(
         "Name:Moat",
@@ -65,7 +70,11 @@ export const AllCards: DominionCard[] = [
         2,
         [CardType.Action, CardType.Reaction],
         ActionEconomy.Terminating,
-        [Draws.AddSeveral]
+        [Draws.AddSeveral],
+        [
+            new Relationship([CardType.Attack]),
+            new Relationship([ActionEconomy.Propagating]),
+        ]
     ),
     new DominionCard(
         "Name:Harbinger",
@@ -73,7 +82,8 @@ export const AllCards: DominionCard[] = [
         3,
         [CardType.Action],
         ActionEconomy.Sustaining,
-        [Draws.ReplaceSelf, MiscAbilities.OrganizeDeck]
+        [Draws.ReplaceSelf, MiscAbilities.OrganizeDeck],
+        [ new Relationship([Draws.Any]) ]
     ),
     new DominionCard(
         "Name:Merchant",

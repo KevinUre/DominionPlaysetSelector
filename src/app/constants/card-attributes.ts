@@ -27,6 +27,7 @@ export const enum Draws {
     ReplaceSelf = "Draw:ReplaceSelf",
     AddSeveral = "Draw:AddSeveral",
     ReplaceSeveral = "Draw:ReplaceSeveral",
+    Any = "Draw:Any"
 }
 
 export const enum MiscAbilities {
